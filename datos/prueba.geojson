@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 1,
+          "EDIFICIO": "C.P. Rotxapea",
+          "DIRECCION": "Paseo Enamorados, 32",
+          "AÑO": 2011,
+          "OPERADOR": "Elecnor",
+          "POT_PICO": 15.04,
+          "TIPO_CONSU": "Autoconsumo individual",
+          "N_PANELES": 64,
+          "GENER2023": 25470
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-1.6601, 42.8345]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "ID": 2,
+          "EDIFICIO": "Biblioteca Pública",
+          "DIRECCION": "Calle Mayor, 15",
+          "AÑO": 2014,
+          "OPERADOR": "Acciona",
+          "POT_PICO": 22.5,
+          "TIPO_CONSU": "Autoconsumo colectivo",
+          "N_PANELES": 90,
+          "GENER2023": 31200
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-1.6440, 42.8187]
+        }
+      }
+    ]
+  }
+  
