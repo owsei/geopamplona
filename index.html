@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mapa con Leaflet y GeoJSON</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Estilos de Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+        <style>
+            #map {
+            height: 600px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h2>Mapa con GeoJSON</h2>
+        <div id="map"></div>
+
+        <!-- Scripts de Leaflet -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <div id="map"></div>
+        <script src="datos/calidadAire.js"></script>
+        <script>
+            // Initialize the map and set its view to Pamplona
+            var map = L.map('map').setView([42.8125, -1.6456], 14);
+
+            // Add a tile layer to the map
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            // Add a marker to the map
+            var marker = L.marker([42.8125, -1.6456]).addTo(map);
+            marker.bindPopup("<b>Welcome to Pamplona!</b>").openPopup();
+            
+            proj4.defs("EPSG:25830","+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs");
+
+            
+            function popup(feature, layer) {
+                if (feature.properties && feature.properties.DIRECCION) {
+                    const coordenadas = proj4("EPSG:25830", "EPSG:4326", feature.geometry.coordinates);
+                    console.log("Lat/Lon:", coordenadas);
+                    var marker = L.marker([coordenadas[1], coordenadas[0]])
+                        .bindPopup("<strong>Calidad:</strong>" + feature.properties.DIRECCION + "<br>" + feature.properties.DESCRIP)
+                        .addTo(map);
+                }
+            }
+
+            L.geoJSON(calidadAire).addTo(map);
+
+            var calidadAireJS=L.geoJSON(calidadAire, {
+                onEachFeature: popup
+            }).addTo(map);
+
+        </script>
+        
+            
+    </body>
+</html>

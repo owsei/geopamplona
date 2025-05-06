@@ -1,0 +1,9 @@
+﻿Cambio climático- Instalaciones de control de calidad del aire:
+     Atributo: FEATURE - Descripción: Código de capa
+     Atributo: ID - Descripción: Código de estación de calidad del aire
+     Atributo: TIPO - Descripción: Tipo de elemento
+     Atributo: CATEGORIA - Descripción: Categoría de estación de calidad del aire
+     Atributo: DIRECCION - Descripción: Ubicaciónl de estación de calidad del aire
+     Atributo: DESCRIP - Descripción: Descripción de estación de calidad del aire
+     Atributo: TITULAR - Descripción: Titularidad de estación de calidad del aire
+     Atributo: ENLACE - Descripción: Enlace con página web

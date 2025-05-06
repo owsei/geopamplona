@@ -1,0 +1,19 @@
+﻿Cambio climático- Instalaciones fotovoltaicas municipales:
+     Atributo: FEATURE - Descripción: Código de capa
+     Atributo: ID - Descripción: Código identificador instalación fotovoltaica municipal
+     Atributo: ID_N - Descripción: Código de instalación fotovoltaica municipal
+     Atributo: TIPO - Descripción: Tipo de elemento
+     Atributo: CATEGORIA - Descripción: Categoría de elemento
+     Atributo: EDIFICIO - Descripción: Nombre del edificio donde se encuentra la instalación fotovoltaica municipal
+     Atributo: DIRECCION - Descripción: Dirección postal donde se encuentra la instalación fotovoltaica municipal
+     Atributo: AÑO - Descripción: Año de emplazamiento de la instalación fotovoltaica municipal
+     Atributo: OPERADOR - Descripción: Instalador de la instalación fotovoltaica municipal
+     Atributo: POT_NOM - Descripción: Potencia nominal
+     Atributo: POT_PICO - Descripción: Potencia pico
+     Atributo: TIPO_CONSUMO - Descripción: Tipo de consumo de la instalación fotovoltaica municipal
+     Atributo: INVERSOR - Descripción: Modelo de inversor fotovoltaico
+     Atributo: N_INVERSOR - Descripción: Número de inversores fotovoltaicos
+     Atributo: TIPO_PANEL - Descripción: Modelo de panel fotovoltaico
+     Atributo: N_PANELES - Descripción: Número de paneles fotovoltaicos
+     Atributo: GENER2022 - Descripción: Generación 2022
+     Atributo: GENER2023 - Descripción: Generación 2023
