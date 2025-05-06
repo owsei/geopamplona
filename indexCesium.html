@@ -35,7 +35,7 @@
     viewer.entities.add({
       position: Cesium.Cartesian3.fromDegrees(lon, lat, 0), // Altura 0 para el terreno
       point: {
-        pixelSize: 10,
+        pixelSize: 8,
         color: Cesium.Color.YELLOW,
         outlineColor: Cesium.Color.BLACK,
         outlineWidth: 2,
@@ -55,7 +55,7 @@
     });
 
     viewer.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(lon, lat, 1000),
+      destination: Cesium.Cartesian3.fromDegrees(lon, lat, 3000),
     });
 
 
