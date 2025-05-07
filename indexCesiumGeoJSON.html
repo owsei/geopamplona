@@ -94,6 +94,16 @@
           positions: posiciones,
           material: Cesium.Color.BLUE,
           width: 5
+        },
+        label: {
+          text: datosLinea.properties.DIRECCION || 'Sin dirección',
+          font: '18pt sans-serif',
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          outlineWidth: 2,
+          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+          pixelOffset: new Cesium.Cartesian2(0, -12),
+          heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
+          disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
         }
       });
     }
@@ -106,6 +116,7 @@
       });
 
       viewer.entities.add({
+        // position : Cesium.Cartesian3.fromDegrees(datosMultipoligono.geometry.coordinates[0][0],0),
         polygon: {
           hierarchy: posiciones,
           material: Cesium.Color.GREEN.withAlpha(0.5),
@@ -115,7 +126,7 @@
       });
     }
 
-    async function cargarGeoJSON() {
+    async function cargarGeoJSON(ruta) {
         
       // const dataSource = await Cesium.GeoJsonDataSource.load('datos/prueba.geojson', {
       //   clampToGround: true
@@ -125,17 +136,14 @@
 
       
       var dataSource;
-      fetch('./datos/AMBI_Pol_HuertosUrb.json')
+      fetch(ruta)
         .then(response => response.json())
         .then(data => {
           dataSource= data;
 
-          console.log('GeoJSON cargado:', dataSource);
           const entidades = dataSource.features;
-          console.log('Entidades:', entidades);
           // console.log('Entidades:', entidades);
           for (let i = 0; i < entidades.length; i++) {
-            
 
             switch (entidades[i].geometry.type) {
               case 'Point':
@@ -154,9 +162,10 @@
                 crearMultipoligono(entidades[i]);
                 break;
               default:
-                console.log('Tipo de geometría no soportado:', entidades[i].geometry.type);
+                console.log('Tipo de geometría no soportado');
             }
           }
+          console.log('finalizado');
         })
         .catch(error => console.error("Error al leer el GeoJSON:", error));
 
@@ -167,7 +176,8 @@
              
       }//FIN cargarGeoJSON 
         
-      cargarGeoJSON();
+      cargarGeoJSON('./datos/MOVI_Pto_AccesoRestr.json');
+      cargarGeoJSON('./datos/MOVI_Pol_ZonaAccesoRestr.json');
 
         
   </script>
