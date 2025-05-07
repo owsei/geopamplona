@@ -16,13 +16,14 @@
   <div id="cesiumContainer"></div>
   <script>
     // Define proyección UTM 30N (ETRS89, EPSG:25830)
-    proj4.defs("EPSG:25830", "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs");
+    // proj4.defs("EPSG:25830", "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs");
 
     // Coordenadas en metros (UTM)
-    const coordsUTM = [610283.43873423198238, 4742371.171304043382406 ]; // [x, y]
+    // const coordsUTM = [610283.43873423198238, 4742371.171304043382406 ]; // [x, y]
 
     // Convertir a WGS84
-    const [lon, lat] = proj4("EPSG:25830", "EPSG:4326", coordsUTM);
+    // const [lon, lat] = proj4("EPSG:25830", "EPSG:4326", coordsUTM);
+    
 
     // Inicializar Cesium
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YWQ3ZWY4ZS03NzBjLTRjNzktYTYyNy0zMTRkYmE1NmE1NDciLCJpZCI6MjgwODk3LCJpYXQiOjE3NDEwNzIzMzl9.rpQ6pVt0APCbZ_zhTJkhquCVXwmMo3unuk4ZafCea-k'; // Usa tu token de Cesium o deja en blanco si es local
@@ -32,68 +33,139 @@
         terrain: Cesium.Terrain.fromWorldTerrain(),
     });
 
-    proj4.defs("EPSG:25830","+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs");
+
+    function crearPunto(datosPunto) {
+      const coordenadas = datosPunto.geometry.coordinates;
+      const [lon, lat] = coordenadas;
+      console.log('Coordenadas:', coordenadas);
+      console.log('Lat:', lat, 'Lon:', lon);
+
+      viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(lon, lat, 0), // Altura 0 para el terreno
+        point: {
+          pixelSize: 8,
+          color: Cesium.Color.YELLOW,
+          outlineColor: Cesium.Color.BLACK,
+          outlineWidth: 2,
+          heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
+          disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
+        },
+        label: {
+          text: datosPunto.properties.DIRECCION || 'Sin dirección',
+          font: '18pt sans-serif',
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          outlineWidth: 2,
+          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+          pixelOffset: new Cesium.Cartesian2(0, -12),
+          heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
+          disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
+        }
+      });
+    }
+
+
+    function crearPoligono(datosPoligono) {
+      const coordenadas = datosPoligono.geometry.coordinates[0]; // Asumiendo que es un polígono simple
+      const posiciones = coordenadas.map(coord => {
+        const [lon, lat] = coord;
+        return Cesium.Cartesian3.fromDegrees(lon, lat, 0);
+      });
+
+      viewer.entities.add({
+        polygon: {
+          hierarchy: posiciones,
+          material: Cesium.Color.RED.withAlpha(0.5),
+          outline: true,
+          outlineColor: Cesium.Color.BLACK
+        }
+      });
+    }
+
+
+    function crearLinea(datosLinea) {
+      const coordenadas = datosLinea.geometry.coordinates;
+      const posiciones = coordenadas.map(coord => {
+        const [lon, lat] = coord;
+        return Cesium.Cartesian3.fromDegrees(lon, lat, 0);
+      });
+
+      viewer.entities.add({
+        polyline: {
+          positions: posiciones,
+          material: Cesium.Color.BLUE,
+          width: 5
+        }
+      });
+    }
+
+    function crearMultipoligono(datosMultipoligono) {
+      const coordenadas = datosMultipoligono.geometry.coordinates[0][0]; // Asumiendo que es un polígono simple
+      const posiciones = coordenadas.map(coord => {
+        const [lon, lat] = coord;
+        return Cesium.Cartesian3.fromDegrees(lon, lat, 0);
+      });
+
+      viewer.entities.add({
+        polygon: {
+          hierarchy: posiciones,
+          material: Cesium.Color.GREEN.withAlpha(0.5),
+          outline: true,
+          outlineColor: Cesium.Color.BLACK
+        }
+      });
+    }
 
     async function cargarGeoJSON() {
         
-      const dataSource = await Cesium.GeoJsonDataSource.load('./datos/calidadAire.geojson', {
-        clampToGround: true
-      });
+      // const dataSource = await Cesium.GeoJsonDataSource.load('datos/prueba.geojson', {
+      //   clampToGround: true
+      // });
+      const utm30n = "+proj=utm +zone=30 +datum=WGS84 +units=m +no_defs";
+      const wgs84 = proj4.WGS84;
 
       
+      var dataSource;
+      fetch('./datos/AMBI_Pol_HuertosUrb.json')
+        .then(response => response.json())
+        .then(data => {
+          dataSource= data;
 
-      console.log('GeoJSON cargado:', dataSource);
-      const entidades = dataSource.entities.values;
-      // console.log('Entidades:', entidades);
-      for (let i = 0; i < entidades.length; i++) {
-        const entidad = entidades[i];
-        const posicion = entidad.position;
-        console.log('Posición:', posicion);
-        console.log('Pos val. lon:', posicion._value.x);
-        console.log('Pos val. lat:', posicion._value.y);
-        coordinate=[posicion._value.y, posicion._value.x];
-        console.log('Coordinate:', coordinate);
+          console.log('GeoJSON cargado:', dataSource);
+          const entidades = dataSource.features;
+          console.log('Entidades:', entidades);
+          // console.log('Entidades:', entidades);
+          for (let i = 0; i < entidades.length; i++) {
+            
 
+            switch (entidades[i].geometry.type) {
+              case 'Point':
+                console.log('Es un punto');
+                crearPunto(entidades[i]);
+                break;
+              case 'Polygon':
+                console.log('Es un polígono');
+                crearPoligono(entidades[i]);
+                break;
+              case 'LineString':
+                console.log('Es una línea');
+                break;
+              case 'MultiPolygon':
+                console.log('Es un multipolígono');
+                crearMultipoligono(entidades[i]);
+                break;
+              default:
+                console.log('Tipo de geometría no soportado:', entidades[i].geometry.type);
+            }
+          }
+        })
+        .catch(error => console.error("Error al leer el GeoJSON:", error));
+
+        viewer.camera.flyTo({
+          destination: Cesium.Cartesian3.fromDegrees(-1.6456,42.8125, 7000),
+        });
         
-        if (posicion) {
-          proj4.defs("EPSG:25830","+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs");
-          const from = proj4("EPSG:25830");
-          const to = proj4("WGS84");
-          const [lon, lat] = proj4(from, to, coordinate);
-
-          console.log(lon);
-          console.log(lat);
-
-          viewer.entities.add({
-              position: Cesium.Cartesian3.fromDegrees(lon, lat, 0), // Altura 0 para el terreno
-              point: {
-                pixelSize: 8,
-                color: Cesium.Color.YELLOW,
-                outlineColor: Cesium.Color.BLACK,
-                outlineWidth: 2,
-                heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
-                disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
-              },
-              label: {
-                text: entidades[i].properties.DIRECCION || 'Sin dirección',
-                font: '18pt sans-serif',
-                style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-                outlineWidth: 2,
-                verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-                pixelOffset: new Cesium.Cartesian2(0, -12),
-                heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
-                disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
-              }
-            });
-        } else {
-          console.log(`Entidad ${i} no tiene posición.`);
-        }
-      }
-
-      
-      // viewer.dataSources.add(dataSource);
-      // viewer.zoomTo(dataSource);
-    } 
+             
+      }//FIN cargarGeoJSON 
         
       cargarGeoJSON();
 
