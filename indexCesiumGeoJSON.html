@@ -3,187 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <title>Cesium UTM to WGS84</title>
+
+  <!--LIBRERIA TRASFORMACION GEOLOCALIZACION-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.111/Build/Cesium/Cesium.js"></script>
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.111/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+  <!--CESIUM-->
+  <script src="https://unpkg.com/cesium@latest/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.129/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  
+  <!--BOOTSTRAP-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  <script src="js/createElementsGEO.js"></script>
+  <link rel="stylesheet" href="styles/styles.css"></script>
   <style>
-    #cesiumContainer {
-      width: 100%; height: 100vh; margin: 0; padding: 0; display: block;
-    }
+   
   </style>
 </head>
 <body>
-  <div id="cesiumContainer"></div>
-  <script>
-    // Define proyección UTM 30N (ETRS89, EPSG:25830)
-    // proj4.defs("EPSG:25830", "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs");
+  <div id="cesiumContainer">
+    <div class="floating-layer">
+      <h3>Información Adicional</h3>
+      <p>Esta es una capa flotante sobre el mapa.</p>
+      <div id="arbol">
+        <ul class="tree">
+          <li>
+              <span onclick="toggleSubtree(this)">📂 Capas Base</span>
+              <ul class="nested">
+                  <li onclick="cargarGeoJSON('./datos/MOVI_Pto_AccesoRestr.json')">🌎 Puntos de Acceso restringido</li>
+                  <li onclick="cargarGeoJSON('./datos/MOVI_Pol_ZonaAccesoRestr.json')">🌎 Zona Acceso restringido</li>
+              </ul>
+          </li>
+        </ul>
+        <br>
+        <button class="btn btn-primary" onclick="limpiarEntidades()">Limpiar</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" onclick="puntoPamplona()">Pamplona</button>
+      </div>
+    </div>
+  </div>
 
-    // Coordenadas en metros (UTM)
-    // const coordsUTM = [610283.43873423198238, 4742371.171304043382406 ]; // [x, y]
+  <script type="module">
 
-    // Convertir a WGS84
-    // const [lon, lat] = proj4("EPSG:25830", "EPSG:4326", coordsUTM);
-    
-
+    import './js/createElementsGEO.js';
     // Inicializar Cesium
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YWQ3ZWY4ZS03NzBjLTRjNzktYTYyNy0zMTRkYmE1NmE1NDciLCJpZCI6MjgwODk3LCJpYXQiOjE3NDEwNzIzMzl9.rpQ6pVt0APCbZ_zhTJkhquCVXwmMo3unuk4ZafCea-k'; // Usa tu token de Cesium o deja en blanco si es local
 
+    // const viewer = new Cesium.Viewer("cesiumContainer", {
+    //     terrain: Cesium.Terrain.fromWorldTerrain(),
+    // });
 
-    const viewer = new Cesium.Viewer("cesiumContainer", {
-        terrain: Cesium.Terrain.fromWorldTerrain(),
-    });
+      var viewer = new Cesium.Viewer("cesiumContainer", {
+        timeline: false,
+        animation: false,
+        sceneModePicker: false,
+        baseLayerPicker: false,
+        geocoder: Cesium.IonGeocodeProviderType.GOOGLE,
+        // The globe does not need to be displayed,
+        // since the Photorealistic 3D Tiles include terrain
+        globe: false,
+      });
+
+      window.viewer = viewer; // Make the viewer accessible globally
+
+      // Enable rendering the sky
+      viewer.scene.skyAtmosphere.show = true;
 
 
-    function crearPunto(datosPunto) {
-      const coordenadas = datosPunto.geometry.coordinates;
-      const [lon, lat] = coordenadas;
-      console.log('Coordenadas:', coordenadas);
-      console.log('Lat:', lat, 'Lon:', lon);
 
-      viewer.entities.add({
-        position: Cesium.Cartesian3.fromDegrees(lon, lat, 0), // Altura 0 para el terreno
-        point: {
-          pixelSize: 8,
-          color: Cesium.Color.YELLOW,
-          outlineColor: Cesium.Color.BLACK,
-          outlineWidth: 2,
-          heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
-          disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
-        },
-        label: {
-          text: datosPunto.properties.DIRECCION || 'Sin dirección',
-          font: '18pt sans-serif',
-          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-          outlineWidth: 2,
-          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-          pixelOffset: new Cesium.Cartesian2(0, -12),
-          heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
-          disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
+        // Add Google Photorealistic 3D Tiles
+        try {
+          const googleTileset = await Cesium.createGooglePhotorealistic3DTileset({
+            // Only the Google Geocoder can be used with Google Photorealistic 3D Tiles.  Set the `geocode` property of the viewer constructor options to IonGeocodeProviderType.GOOGLE.
+            onlyUsingWithGoogleGeocoder: true,
+          });
+          viewer.scene.primitives.add(googleTileset);
+        } catch (error) {
+          console.log(`Error loading Photorealistic 3D Tiles tileset.
+          ${error}`);
         }
-      });
-    }
 
+    </script>
 
-    function crearPoligono(datosPoligono) {
-      const coordenadas = datosPoligono.geometry.coordinates[0]; // Asumiendo que es un polígono simple
-      const posiciones = coordenadas.map(coord => {
-        const [lon, lat] = coord;
-        return Cesium.Cartesian3.fromDegrees(lon, lat, 0);
-      });
-
-      viewer.entities.add({
-        polygon: {
-          hierarchy: posiciones,
-          material: Cesium.Color.RED.withAlpha(0.5),
-          outline: true,
-          outlineColor: Cesium.Color.BLACK
-        }
-      });
-    }
-
-
-    function crearLinea(datosLinea) {
-      const coordenadas = datosLinea.geometry.coordinates;
-      const posiciones = coordenadas.map(coord => {
-        const [lon, lat] = coord;
-        return Cesium.Cartesian3.fromDegrees(lon, lat, 0);
-      });
-
-      viewer.entities.add({
-        polyline: {
-          positions: posiciones,
-          material: Cesium.Color.BLUE,
-          width: 5
-        },
-        label: {
-          text: datosLinea.properties.DIRECCION || 'Sin dirección',
-          font: '18pt sans-serif',
-          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-          outlineWidth: 2,
-          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-          pixelOffset: new Cesium.Cartesian2(0, -12),
-          heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
-          disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
-        }
-      });
-    }
-
-    function crearMultipoligono(datosMultipoligono) {
-      const coordenadas = datosMultipoligono.geometry.coordinates[0][0]; // Asumiendo que es un polígono simple
-      const posiciones = coordenadas.map(coord => {
-        const [lon, lat] = coord;
-        return Cesium.Cartesian3.fromDegrees(lon, lat, 0);
-      });
-
-      viewer.entities.add({
-        // position : Cesium.Cartesian3.fromDegrees(datosMultipoligono.geometry.coordinates[0][0],0),
-        polygon: {
-          hierarchy: posiciones,
-          material: Cesium.Color.GREEN.withAlpha(0.5),
-          outline: true,
-          outlineColor: Cesium.Color.BLACK
-        }
-      });
-    }
-
-    async function cargarGeoJSON(ruta) {
-        
-      // const dataSource = await Cesium.GeoJsonDataSource.load('datos/prueba.geojson', {
-      //   clampToGround: true
-      // });
-      const utm30n = "+proj=utm +zone=30 +datum=WGS84 +units=m +no_defs";
-      const wgs84 = proj4.WGS84;
-
-      
-      var dataSource;
-      fetch(ruta)
-        .then(response => response.json())
-        .then(data => {
-          dataSource= data;
-
-          const entidades = dataSource.features;
-          // console.log('Entidades:', entidades);
-          for (let i = 0; i < entidades.length; i++) {
-
-            switch (entidades[i].geometry.type) {
-              case 'Point':
-                console.log('Es un punto');
-                crearPunto(entidades[i]);
-                break;
-              case 'Polygon':
-                console.log('Es un polígono');
-                crearPoligono(entidades[i]);
-                break;
-              case 'LineString':
-                console.log('Es una línea');
-                break;
-              case 'MultiPolygon':
-                console.log('Es un multipolígono');
-                crearMultipoligono(entidades[i]);
-                break;
-              default:
-                console.log('Tipo de geometría no soportado');
-            }
-          }
-          console.log('finalizado');
-        })
-        .catch(error => console.error("Error al leer el GeoJSON:", error));
-
-        viewer.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(-1.6456,42.8125, 7000),
-        });
-        
-             
-      }//FIN cargarGeoJSON 
-        
-      cargarGeoJSON('./datos/MOVI_Pto_AccesoRestr.json');
-      cargarGeoJSON('./datos/MOVI_Pol_ZonaAccesoRestr.json');
-      // cargarGeoJSON('./datos/AMBI_Pol_Inundacion.json');
-      // cargarGeoJSON('./datos/AMBI_Pto_Inst_FV_Muni.json');
-      // cargarGeoJSON('./datos/AMBI_Pto_ClimaSensores.json');
-      
-
-        
-  </script>
 </body>
 </html>
