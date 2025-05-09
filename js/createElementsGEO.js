@@ -47,10 +47,6 @@ function crearPunto(datosPunto) {
     });
   }
 
-
-
-
-
   function crearLinea(datosLinea) {
     const coordenadas = datosLinea.geometry.coordinates;
     const posiciones = coordenadas.map(coord => {
@@ -94,6 +90,37 @@ function crearPunto(datosPunto) {
       }
     });
   }
+
+
+  function toogleMap() {
+
+    if (window.google)
+    {
+      
+      window.viewer = new Cesium.Viewer("cesiumContainer", {
+        terrain: Cesium.Terrain.fromWorldTerrain(),
+      });
+    }
+    else
+    {
+      window.viewer = new Cesium.Viewer("cesiumContainer", {
+        timeline: false,
+        animation: false,
+        sceneModePicker: false,
+        baseLayerPicker: false,
+        geocoder: Cesium.IonGeocodeProviderType.GOOGLE,
+        // The globe does not need to be displayed,
+        // since the Photorealistic 3D Tiles include terrain
+        globe: false,
+      });
+    }
+    
+    window.google=!window.google
+
+
+  }
+
+
 
   // FUNCION PARA CARGAR UN GEOJSON EN EL VISOR
   // console.log(Cesium.VERSION);
@@ -153,6 +180,11 @@ function crearPunto(datosPunto) {
   function puntoPamplona() {
     viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(-1.6456,42.8125, 7000),
+        // orientation: {
+        //     heading: Cesium.Math.toRadians(10.0),
+        //     pitch: Cesium.Math.toRadians(-60.0),
+        //     roll: 0.0
+        // }
       });
   }
 
@@ -160,4 +192,20 @@ function crearPunto(datosPunto) {
   function toggleSubtree(element) {
     const subtree = element.nextElementSibling;
     subtree.classList.toggle("active");
+  }
+
+  function toggleView() {
+    
+    if (window.is3D) {
+      document.getElementById("map").style.display =  "none" ;
+      document.getElementById("cesiumContainer").style.display = "block";
+      window.is3D = !window.is3D;
+    }
+    else
+    {
+      document.getElementById("map").style.display = "block" ;
+      document.getElementById("cesiumContainer").style.display = "none";
+      window.is3D = !window.is3D;
+    }
+    
   }
