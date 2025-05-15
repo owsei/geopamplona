@@ -1,0 +1,231 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.64704897,
+          42.81829748
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 1,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "Plaza Santa Ana",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.66095691,
+          42.82398116
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 2,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "Plaza de la Estación",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.66388026,
+          42.8194587
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 3,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "C/ Vicenta María",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6689029,
+          42.81912097
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 4,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "C/ Doctor Juaristi",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6689023,
+          42.82256995
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 5,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "Calle del Muelle",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.67257157,
+          42.82145989
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 6,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "C/ Doctor Repáraz",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.67588301,
+          42.8101697
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 7,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "Paseo Antonio Perez Goyena",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.62291006,
+          42.81408341
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 8,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "Carretera Sarriguren",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pto_Compost.9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.63749333,
+          42.83064731
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6006,
+        "ID": 9,
+        "ID_N": "",
+        "TIPO": "Punto de interés",
+        "CATEGORIA": "Área compostaje comunitario",
+        "DIRECCION": "C/ Juan de Tarazona",
+        "DESCRIP": "Zona de compostaje para residuos domésticos de particulares",
+        "TITULAR": "Mancomunidad de la Comarca de Pamplona",
+        "GESTION": "MCP+ Particulares",
+        "ENLACE": "https://www.pamplona.es/ayuntamiento/varios/punto-de-compostaje-comunitario-de-pamplona#:~:text=En%20la%20actualidad%20se%20dispone,la%20Estaci%C3%B3n%2C%20c%2F%20San%20Vicenta"
+      }
+    }
+  ],
+  "totalFeatures": 9,
+  "numberMatched": 9,
+  "numberReturned": 9,
+  "timeStamp": "2025-05-07T07:49:00.842Z",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4326"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "nombre": "Barrio Viejo"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[ -1.65, 42.81 ], [ -1.64, 42.81 ], [ -1.64, 42.82 ], [ -1.65, 42.82 ], [ -1.65, 42.81 ]]]
+        }
+      }
+    ]
+  }
+  

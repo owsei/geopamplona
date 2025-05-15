@@ -1,0 +1,8 @@
+# Convertir a GeoJSON
+ogr2ogr -f GeoJSON salida.geojson entrada.shp
+
+# Importar a PostGIS
+ogr2ogr -f "PostgreSQL" PG:"dbname=mi_db user=usuario password=clave" entrada.shp
+
+# Reproyectar
+ogr2ogr -t_srs EPSG:3857 salida_3857.shp entrada.shp

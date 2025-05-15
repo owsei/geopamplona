@@ -1,0 +1,965 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.1",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.6760566,
+                42.81027794
+              ],
+              [
+                -1.67581755,
+                42.81046711
+              ],
+              [
+                -1.67558456,
+                42.81009509
+              ],
+              [
+                -1.67588893,
+                42.80999101
+              ],
+              [
+                -1.6760566,
+                42.81027794
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 4,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huerta comunitaria",
+        "DIRECCION": "Plaza Monasterio de Iranzu",
+        "DESCRIP": "Huerta gestionada por asociación. Entrada libre",
+        "AREA": 370,
+        "GESTION": "Asociación San Juan Xar",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/huertos-urbanos"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.2",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.66317055,
+                42.8155394
+              ],
+              [
+                -1.66289341,
+                42.81566002
+              ],
+              [
+                -1.66280229,
+                42.81555144
+              ],
+              [
+                -1.66308299,
+                42.81542829
+              ],
+              [
+                -1.66317055,
+                42.8155394
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 3,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huerta comunitaria",
+        "DIRECCION": "C/Arcadio Mª Larraona-Paseo Antonio Pérez de Goyena",
+        "DESCRIP": "Huerta gestionada por asociación. Entrada libre",
+        "AREA": 924,
+        "GESTION": "Asociación Ermitaldea",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/huertos-urbanos"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.3",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.64638014,
+                42.81853992
+              ],
+              [
+                -1.64624602,
+                42.81868971
+              ],
+              [
+                -1.6461352,
+                42.81857487
+              ],
+              [
+                -1.64608549,
+                42.81860438
+              ],
+              [
+                -1.64607511,
+                42.81859824
+              ],
+              [
+                -1.64605845,
+                42.81861181
+              ],
+              [
+                -1.64597441,
+                42.81855491
+              ],
+              [
+                -1.64601487,
+                42.81852098
+              ],
+              [
+                -1.64593926,
+                42.81839881
+              ],
+              [
+                -1.64630056,
+                42.81827837
+              ],
+              [
+                -1.646322,
+                42.81831303
+              ],
+              [
+                -1.64637611,
+                42.81829647
+              ],
+              [
+                -1.64650683,
+                42.81851648
+              ],
+              [
+                -1.64638014,
+                42.81853992
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 1,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huerta comunitaria",
+        "DIRECCION": "C/ Jarauta 5",
+        "DESCRIP": "Huerta gestionada por asociación. Entrada libre",
+        "AREA": 1449,
+        "GESTION": "Asociación Piparrika",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/huertos-urbanos"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.4",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.65133767,
+                42.82871576
+              ],
+              [
+                -1.65183479,
+                42.82906549
+              ],
+              [
+                -1.65152938,
+                42.82930181
+              ],
+              [
+                -1.6512071,
+                42.82881527
+              ],
+              [
+                -1.65133767,
+                42.82871576
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 2,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huerta comunitaria",
+        "DIRECCION": "C/ Cruz de Barkazio (U.D. Rotxapea)",
+        "DESCRIP": "Huerta gestionada por asociación. Entrada libre",
+        "AREA": 1160,
+        "GESTION": "Asociación Mendialdea-Baratzapea",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/huertos-urbanos"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.5",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.63586385,
+                42.82566992
+              ],
+              [
+                -1.63551068,
+                42.82578956
+              ],
+              [
+                -1.63529467,
+                42.82551692
+              ],
+              [
+                -1.63576594,
+                42.8253402
+              ],
+              [
+                -1.63586385,
+                42.82566992
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 5,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huerta comunitaria",
+        "DIRECCION": "C/ Padre Adoain",
+        "DESCRIP": "Huerta gestionada por asociación. Entrada libre",
+        "AREA": 1300,
+        "GESTION": "Asociación Krispilak",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/huertos-urbanos"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.6",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.67554729,
+                42.80137589
+              ],
+              [
+                -1.67523218,
+                42.80140127
+              ],
+              [
+                -1.6750667,
+                42.80039821
+              ],
+              [
+                -1.67565187,
+                42.80034305
+              ],
+              [
+                -1.67571136,
+                42.80033954
+              ],
+              [
+                -1.67569789,
+                42.80055067
+              ],
+              [
+                -1.67566584,
+                42.80086226
+              ],
+              [
+                -1.67562994,
+                42.80086405
+              ],
+              [
+                -1.67554729,
+                42.80137589
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 6,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huertas autosuficiencia",
+        "DIRECCION": "Grupo Urdánoz",
+        "DESCRIP": "Huertas particulares y de asociaciones",
+        "AREA": 4800,
+        "GESTION": "Particulares, A. Itxaropengune, A. Lunes Lilas Navarra, A. Retinosis Navarra, A. Fibromialgia Navarra (AFINA), Etxabakoitz Bizirik-Centro San José, Club Jubilados Etxabakoitz-Centro Pilar Gogorcena, Apoyo Mutuo-Elkarri Laguntza, Parroquia de Etxabakoitz",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/huertos-urbanos"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.7",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.64334424,
+                42.82739883
+              ],
+              [
+                -1.64287935,
+                42.8281482
+              ],
+              [
+                -1.64264783,
+                42.82847998
+              ],
+              [
+                -1.64231674,
+                42.82830659
+              ],
+              [
+                -1.64256176,
+                42.82790455
+              ],
+              [
+                -1.64257516,
+                42.82783868
+              ],
+              [
+                -1.64293471,
+                42.82725752
+              ],
+              [
+                -1.64334424,
+                42.82739883
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 7,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huertas autoconsumo",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Huertas alquiladas a particulares",
+        "AREA": 4640,
+        "GESTION": "Fundagro",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.casagurbindo.es/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.8",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.64251105,
+                42.8285818
+              ],
+              [
+                -1.64249259,
+                42.82860579
+              ],
+              [
+                -1.64245855,
+                42.8286582
+              ],
+              [
+                -1.64235957,
+                42.82880889
+              ],
+              [
+                -1.64220129,
+                42.82893686
+              ],
+              [
+                -1.64189103,
+                42.82917747
+              ],
+              [
+                -1.64146636,
+                42.82931768
+              ],
+              [
+                -1.6410507,
+                42.82931935
+              ],
+              [
+                -1.64094015,
+                42.82931584
+              ],
+              [
+                -1.64093156,
+                42.82916168
+              ],
+              [
+                -1.64103624,
+                42.82916072
+              ],
+              [
+                -1.64104106,
+                42.82907715
+              ],
+              [
+                -1.64092747,
+                42.8290758
+              ],
+              [
+                -1.64092448,
+                42.82893931
+              ],
+              [
+                -1.64103817,
+                42.82893626
+              ],
+              [
+                -1.64117871,
+                42.82893573
+              ],
+              [
+                -1.64142754,
+                42.82890567
+              ],
+              [
+                -1.64160507,
+                42.82885496
+              ],
+              [
+                -1.64180434,
+                42.82876709
+              ],
+              [
+                -1.64195028,
+                42.82865658
+              ],
+              [
+                -1.64218802,
+                42.82845032
+              ],
+              [
+                -1.6422344,
+                42.82838044
+              ],
+              [
+                -1.64243887,
+                42.8284643
+              ],
+              [
+                -1.64239264,
+                42.82852757
+              ],
+              [
+                -1.64251105,
+                42.8285818
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 8,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Huertas autoconsumo",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Huertas alquiladas a particulares",
+        "AREA": 5762,
+        "GESTION": "Fundagro",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.casagurbindo.es/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.9",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.64070954,
+                42.82892356
+              ],
+              [
+                -1.64048673,
+                42.82981224
+              ],
+              [
+                -1.63999596,
+                42.82969417
+              ],
+              [
+                -1.6397531,
+                42.82958785
+              ],
+              [
+                -1.63918437,
+                42.82920695
+              ],
+              [
+                -1.63978542,
+                42.82852304
+              ],
+              [
+                -1.64070954,
+                42.82892356
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 9,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Centro de interpretación",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Centro de interpretacion de la agricultura y la ganadería. Casa Gurbindo",
+        "AREA": 10624,
+        "GESTION": "Fundagro",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.casagurbindo.es/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.10",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.63958717,
+                42.82842825
+              ],
+              [
+                -1.63905733,
+                42.82900076
+              ],
+              [
+                -1.63883941,
+                42.82884852
+              ],
+              [
+                -1.63887885,
+                42.82882258
+              ],
+              [
+                -1.63826534,
+                42.82830249
+              ],
+              [
+                -1.6382409,
+                42.82832641
+              ],
+              [
+                -1.6381264,
+                42.82823041
+              ],
+              [
+                -1.63888684,
+                42.82777728
+              ],
+              [
+                -1.63943183,
+                42.82828555
+              ],
+              [
+                -1.63938,
+                42.82833115
+              ],
+              [
+                -1.63946847,
+                42.82838722
+              ],
+              [
+                -1.6395108,
+                42.82836572
+              ],
+              [
+                -1.63958717,
+                42.82842825
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 10,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Escuela taller",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Agricultura en ecológico. Casa Irujo",
+        "AREA": 7714,
+        "GESTION": "Elkarkide",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.casagurbindo.es/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.11",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.63884036,
+                42.82771511
+              ],
+              [
+                -1.6385532,
+                42.82785695
+              ],
+              [
+                -1.63856756,
+                42.82788353
+              ],
+              [
+                -1.63806189,
+                42.82817242
+              ],
+              [
+                -1.63782209,
+                42.82792748
+              ],
+              [
+                -1.63757511,
+                42.82760102
+              ],
+              [
+                -1.63754343,
+                42.82754562
+              ],
+              [
+                -1.63808849,
+                42.82736944
+              ],
+              [
+                -1.63842878,
+                42.82725904
+              ],
+              [
+                -1.63884036,
+                42.82771511
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 11,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Centro ocupacional",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Agricultura en ecológico",
+        "AREA": 5765,
+        "GESTION": "Elkarkide",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.elkarkide.com/centros-ocupacionales/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.12",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.63819903,
+                42.82655645
+              ],
+              [
+                -1.63720937,
+                42.82669213
+              ],
+              [
+                -1.63704769,
+                42.82615761
+              ],
+              [
+                -1.63703319,
+                42.82600118
+              ],
+              [
+                -1.63784841,
+                42.82591184
+              ],
+              [
+                -1.63798851,
+                42.82593111
+              ],
+              [
+                -1.63806825,
+                42.82597608
+              ],
+              [
+                -1.63812972,
+                42.82603623
+              ],
+              [
+                -1.6382457,
+                42.82647338
+              ],
+              [
+                -1.63819903,
+                42.82655645
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 12,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Centro ocupacional",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Agricultura en ecológico",
+        "AREA": 6645,
+        "GESTION": "Escuela taller",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/escuelas-taller/aranzadi"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.13",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.63702456,
+                42.82448911
+              ],
+              [
+                -1.63759826,
+                42.82450474
+              ],
+              [
+                -1.63787643,
+                42.8246357
+              ],
+              [
+                -1.6375696,
+                42.82499298
+              ],
+              [
+                -1.63760309,
+                42.82537412
+              ],
+              [
+                -1.63759391,
+                42.82579217
+              ],
+              [
+                -1.63759588,
+                42.82583841
+              ],
+              [
+                -1.63759674,
+                42.82593526
+              ],
+              [
+                -1.63703632,
+                42.82599461
+              ],
+              [
+                -1.6369497,
+                42.82585493
+              ],
+              [
+                -1.6368771,
+                42.82562078
+              ],
+              [
+                -1.63680085,
+                42.82541739
+              ],
+              [
+                -1.63675081,
+                42.82524513
+              ],
+              [
+                -1.63668912,
+                42.82505953
+              ],
+              [
+                -1.63672003,
+                42.82487723
+              ],
+              [
+                -1.63702456,
+                42.82448911
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 13,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Centro ocupacional",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Agricultura en ecológico",
+        "AREA": 10764,
+        "GESTION": "Elkarkide",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.elkarkide.com/centros-ocupacionales/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AMBI_Pol_HuertosUrb.14",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -1.64234963,
+                42.82653092
+              ],
+              [
+                -1.64217945,
+                42.82692945
+              ],
+              [
+                -1.64239323,
+                42.82699801
+              ],
+              [
+                -1.64229874,
+                42.82721697
+              ],
+              [
+                -1.6421216,
+                42.82738653
+              ],
+              [
+                -1.64180649,
+                42.82784937
+              ],
+              [
+                -1.64054996,
+                42.82733707
+              ],
+              [
+                -1.64079825,
+                42.82692186
+              ],
+              [
+                -1.640894,
+                42.8263728
+              ],
+              [
+                -1.64096401,
+                42.82617995
+              ],
+              [
+                -1.64234963,
+                42.82653092
+              ]
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "FEATURE": 6005,
+        "ID": 14,
+        "ID_N": "",
+        "TIPO": "Área de interés",
+        "CATEGORIA": "Escuela taller",
+        "DIRECCION": "Aranzadi",
+        "DESCRIP": "Escuela Taller. Casa Beroiz",
+        "AREA": 17350,
+        "GESTION": "Ayuntamiento de Pamplona",
+        "TITULAR": "Ayuntamiento de Pamplona",
+        "ENLACE": "https://www.pamplona.es/escuelas-taller/aranzadi"
+      }
+    }
+  ],
+  "totalFeatures": 14,
+  "numberMatched": 14,
+  "numberReturned": 14,
+  "timeStamp": "2025-05-07T07:29:02.636Z",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4326"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+criterios de incoporacion de capas
+
+- las de mayor calidad de dato
+
+- geopamplona es del ayuntamiento
+- todo en plataforma
+- programa de innovacion
+    - dar acceso a terceros de plaforma o geopamplona
+    - por calidad
+    - por temas
+    - 
+
+- crear capas de dispositivos o cosas dadas de alta desde plataforma
+- postgis con informacion de lo que vamos a necesitar
+- monica carcar o susana preguntar si existe postgis de ayuntamiento.
+- podriamos mediante cygnus una subcripcion a postgis
+- desde plataforma se podria crear los registros de una tabla postgis
+- que este todo en la misma bd para poder cruzar datos de postgis y datos en tiempo real 
+
+movilidad, patrimonio, temperatura, 
+

@@ -1,0 +1,84 @@
+services:
+  # postgis:
+  #   image: postgis/postgis
+  #   hostname: postgis
+  #   container_name: postgis
+  #   environment:
+  #   # If you need to create multiple database you can add coma separated databases eg gis,data
+  #       POSTGRES_DB : orion
+  #       POSTGRES_USER: postgres
+  #       POSTGRES_PASS: password
+  #       POSTGRES_PASSWORD: 1111
+  #       # ALLOW_IP_RANGE: 0.0.0.0/0
+  #       # Add extensions you need to be enabled by default in the DB. Default are the five specified below
+  #       POSTGRES_MULTIPLE_EXTENSIONS: postgis,hstore,postgis_topology,postgis_raster,pgrouting
+  #       RUN_AS_ROOT: true
+  #   ports:
+  #       - "5433:5432"
+  #   restart: on-failure
+  #   volumes:
+  #       - postgis-data:/var/lib/postgresql
+  #   # - dbbackups:/backups
+  #   networks:
+  #       - fiware
+
+  postgis_db:
+    build:
+      context: .
+      dockerfile: Dockerfile_postgis
+    container_name: postgis_db
+    hostname: postgis_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: geopamplona
+    networks:
+      - geopamplona_net
+
+  fastapi:
+    hostname: fastapi
+    container_name: fastapi
+    build:
+      context: .
+      dockerfile: Dockerfile_fastapi
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgis_db
+    networks:
+      - geopamplona_net
+
+  nginx_server:
+    hostname: nginx
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: Dockerfile_nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - fastapi
+    networks:
+      - geopamplona_net
+
+  geoserver:
+    image: kartoza/geoserver
+    container_name: geoserver
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./geopamplona/geopamplonamaps:/opt/geoserver/data_dir
+    environment:
+      - GEOSERVER_ADMIN_PASSWORD=geoserver
+    restart: unless-stopped
+    networks:
+      - geopamplona_net
+
+volumes:
+  postgis-data:
+
+networks:
+  geopamplona_net:
+      driver: bridge

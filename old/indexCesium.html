@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cesium UTM to WGS84</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.111/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.111/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+    #cesiumContainer {
+      width: 100%; height: 100vh; margin: 0; padding: 0; display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+    // Define proyección UTM 30N (ETRS89, EPSG:25830)
+    proj4.defs("EPSG:25830", "+proj=utm +zone=30 +ellps=GRS80 +units=m +no_defs");
+
+    // Coordenadas en metros (UTM)
+    const coordsUTM = [610283.43873423198238, 4742371.171304043382406 ]; // [x, y]
+
+    // Convertir a WGS84
+    const [lon, lat] = proj4("EPSG:25830", "EPSG:4326", coordsUTM);
+
+    // Inicializar Cesium
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YWQ3ZWY4ZS03NzBjLTRjNzktYTYyNy0zMTRkYmE1NmE1NDciLCJpZCI6MjgwODk3LCJpYXQiOjE3NDEwNzIzMzl9.rpQ6pVt0APCbZ_zhTJkhquCVXwmMo3unuk4ZafCea-k'; // Usa tu token de Cesium o deja en blanco si es local
+
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+        terrain: Cesium.Terrain.fromWorldTerrain(),
+    });
+
+    // Agregar punto como entidad
+    viewer.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(lon, lat, 0), // Altura 0 para el terreno
+      point: {
+        pixelSize: 8,
+        color: Cesium.Color.YELLOW,
+        outlineColor: Cesium.Color.BLACK,
+        outlineWidth: 2,
+        heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
+        disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
+      },
+      label: {
+        text: 'C.P. Rotxapea',
+        font: '18pt sans-serif',
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        outlineWidth: 2,
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        pixelOffset: new Cesium.Cartesian2(0, -12),
+        heightReference: Cesium.HeightReference.RELATIVE_TO_GROUND, // Úsalo si el punto está en terreno
+        disableDepthTestDistance: Number.POSITIVE_INFINITY // Siempre visible encima del terreno
+      }
+    });
+
+    viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(lon, lat, 3000),
+    });
+
+        
+  </script>
+</body>
+</html>
